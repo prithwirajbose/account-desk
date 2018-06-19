@@ -1,25 +1,11 @@
-<?php
-
-require('../vendor/autoload.php');
-
-$app = new Silex\Application();
-$app['debug'] = true;
-
-// Register the monolog logging service
-$app->register(new Silex\Provider\MonologServiceProvider(), array(
-  'monolog.logfile' => 'php://stderr',
-));
-
-// Register view rendering
-$app->register(new Silex\Provider\TwigServiceProvider(), array(
-    'twig.path' => __DIR__.'/views',
-));
-
-// Our web handlers
-
-$app->get('/', function() use($app) {
-  $app['monolog']->addDebug('logging output.');
-  return $app['twig']->render('index.twig');
-});
-
-$app->run();
+<html>
+	<head>
+		<title>Account Desk - Account Management application for employees</title>
+		<meta name="description" content="Account Desk is an Account Management application which can be used by employees of an Organization to manage Accounts/Projects and Internals"/>
+		<meta name="keyword" content="account desk,account,desk,account management,employee,application,cloud,hosted"/>
+	</head>
+	<body>
+		<h1>Account Desk</h1>
+		<p>Account Management application for employees</p>
+	</body>
+</html>
